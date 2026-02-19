@@ -1,10 +1,9 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// CHANGE THIS to your repo name:
-const repoName = "dj-choppercity";
-
+// Default: Vercel/normal hosting => "/"
+// For GitHub Pages => set VITE_BASE="/<repo-name>/"
 export default defineConfig({
   plugins: [react()],
-  base: `/${repoName}/`,
+  base: process.env.VITE_BASE || "/",
 });
